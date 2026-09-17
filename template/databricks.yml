@@ -1,0 +1,25 @@
+bundle:
+  name: dbx-bundle-branching-workflow
+
+variables:
+  catalog:
+    description: Unity Catalog catalog for this environment.
+    default: main
+  schema_silver:
+    description: Schema for silver tables.
+    default: silver
+  schema_gold:
+    description: Schema for gold tables.
+    default: gold
+
+include:
+  - resources/*.job.yml
+
+targets:
+  dev:
+    mode: development
+    default: true
+  staging:
+    mode: production
+  prod:
+    mode: production

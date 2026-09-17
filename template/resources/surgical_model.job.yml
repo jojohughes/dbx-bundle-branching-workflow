@@ -1,0 +1,18 @@
+resources:
+  jobs:
+    surgical_model:
+      name: surgical_model
+      tasks:
+        - task_key: surgical_silver
+          notebook_task:
+            notebook_path: ../src/models/surgical_model/surgical_silver.py
+        - task_key: surgical_gold
+          depends_on:
+            - task_key: surgical_silver
+          notebook_task:
+            notebook_path: ../src/models/surgical_model/surgical_gold.py
+        - task_key: surgical_metrics
+          depends_on:
+            - task_key: surgical_gold
+          notebook_task:
+            notebook_path: ../src/models/surgical_model/surgical_metrics.py

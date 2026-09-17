@@ -1,0 +1,5 @@
+# Dev target overrides
+variables:
+  catalog: dev
+  schema_silver: silver
+  schema_gold: gold

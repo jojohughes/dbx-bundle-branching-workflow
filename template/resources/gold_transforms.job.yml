@@ -1,0 +1,14 @@
+resources:
+  jobs:
+    gold_transforms:
+      name: gold_transforms
+      tasks:
+        - task_key: dim_patient
+          notebook_task:
+            notebook_path: ../src/gold/dim_patient.py
+        - task_key: dim_department
+          notebook_task:
+            notebook_path: ../src/gold/dim_department.py
+        - task_key: fact_encounter
+          notebook_task:
+            notebook_path: ../src/gold/fact_encounter.py

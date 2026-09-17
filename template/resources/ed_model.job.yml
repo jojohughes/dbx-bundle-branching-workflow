@@ -1,0 +1,18 @@
+resources:
+  jobs:
+    ed_model:
+      name: ed_model
+      tasks:
+        - task_key: ed_silver
+          notebook_task:
+            notebook_path: ../src/models/ed_model/ed_silver.py
+        - task_key: ed_gold
+          depends_on:
+            - task_key: ed_silver
+          notebook_task:
+            notebook_path: ../src/models/ed_model/ed_gold.py
+        - task_key: ed_metrics
+          depends_on:
+            - task_key: ed_gold
+          notebook_task:
+            notebook_path: ../src/models/ed_model/ed_metrics.py

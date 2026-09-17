@@ -1,0 +1,14 @@
+resources:
+  jobs:
+    silver_transforms:
+      name: silver_transforms
+      tasks:
+        - task_key: patients
+          notebook_task:
+            notebook_path: ../src/silver/patients.py
+        - task_key: encounters
+          notebook_task:
+            notebook_path: ../src/silver/encounters.py
+        - task_key: departments
+          notebook_task:
+            notebook_path: ../src/silver/departments.py

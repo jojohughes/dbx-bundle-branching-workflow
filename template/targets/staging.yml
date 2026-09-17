@@ -1,0 +1,5 @@
+# Staging target overrides
+variables:
+  catalog: staging
+  schema_silver: silver
+  schema_gold: gold
